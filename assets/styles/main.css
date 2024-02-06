@@ -1,0 +1,68 @@
+@import "./variables.css";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+body
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", "Noto Sans", sans-serif;
+}
+
+.calculator
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 55vw;
+  height: 80vw;
+  background-color: var(--primary);
+  color: var(--secondary);
+  margin: 10vw auto;
+  padding-bottom: 2rem;
+}
+
+.screen
+{
+  border-radius: 0;
+  border: none;
+  background-color: var(--primary);
+  text-align: right;
+  padding-right: 1rem;
+  padding-bottom: 0.75rem;
+  font-size: 3rem;
+  font-weight: 200;
+}
+
+td
+{
+  width: 10vw;
+  height: 10vw;
+  background-color: rgb(65, 65, 65);
+  border: 5px solid var(--primary);
+  border-radius: 6vw;
+  text-align: center;
+  font-size: 1.75rem;
+  padding: auto auto;
+  font-weight: 300;
+}
+
+.greyButton
+{
+  background-color: darkgrey;
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.orangeButton
+{
+  background-color: orange;
+  font-weight: 400;
+}
+
+.zeroButton
+{
+  text-align: left;
+  padding: 0 1rem;
+}

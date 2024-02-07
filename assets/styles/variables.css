@@ -1,5 +1,7 @@
 :root
 {
   --primary: black;
-  --secondary: whitesmoke;
+  --secondary: #e5e5e5;
+  --tertiary: #fca311;
+  --background: #14213d;
 }

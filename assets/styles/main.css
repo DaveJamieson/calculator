@@ -5,30 +5,30 @@ body
 {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  margin: 0 auto;
-  padding: 0;
+  margin: auto auto;
   box-sizing: border-box;
   font-family: "DM Sans", "Noto Sans", sans-serif;
   background: rgb(20, 33, 61);
   background: linear-gradient(180deg, rgba(159, 159, 159, 1) 0%, rgba(20, 33, 61, 1) 100%);
   min-height: 100vh;
   height: 100%;
+  overflow: auto;
 }
 
 .calculator
 {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
-  width: 55vw;
-  height: 80vw;
+  flex-wrap: wrap;
+  width: 95%;
+  height: fit-content;
   background-color: var(--primary);
   color: var(--secondary);
-  margin: 1.5rem auto;
-  padding-bottom: 2rem;
+  margin: auto auto;
   border-radius: 3vw;
   border: 1px solid var(--secondary);
 }
@@ -44,18 +44,19 @@ body
   font-weight: 200;
   letter-spacing: 3px;
   border-radius: 3vw;
+  margin-top: 1rem;
+  padding-top: 1rem;
 }
 
 td
 {
-  width: 10vw;
-  height: 10vw;
+  width: 50px;
+  height: 50px;
   background-color: rgb(65, 65, 65);
   border: 5px solid var(--primary);
-  border-radius: 6vw;
+  border-radius: 50px;
   text-align: center;
   font-size: 1.75rem;
-  padding: auto auto;
   font-weight: 300;
   cursor: pointer;
 }
@@ -82,7 +83,7 @@ tr :hover
 .zeroButton
 {
   text-align: left;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
 }
 
 .linkButton
@@ -91,17 +92,16 @@ tr :hover
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  margin: 0 auto;
-  width: 55vw;
-  height: 10vw;
-  border-radius: 6vw;
+  width: 80%;
+  height: 10%;
+  border-radius: 4rem;
   text-decoration: none;
   color: var(--primary);
   cursor: pointer;
   background-color: var(--secondary);
   text-align: center;
   transition: 0.35s;
-  margin-bottom: 6rem;
+  margin: 1rem;
 }
 
 .linkButton:hover
@@ -113,35 +113,62 @@ tr :hover
 
 @media only screen and (min-width: 768px)
 {
-  body
-  {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 100vh;
-  }
-
   .calculator
   {
 
-    width: 40vw;
-    height: 40vw;
+    width: 80vw;
+    height: fit-content;
     margin: 2rem;
     padding-bottom: 0;
   }
 
   td
   {
-    width: 5vw;
-    height: 5vw;
-    border-radius: 3vw;
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
   }
 
   .linkButton
   {
     font-size: 2rem;
-    width: 45vw;
+    width: 40%;
     margin: auto 0;
+  }
+}
+
+@media only screen and (min-width: 1024px)
+{
+  body
+  {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .calculator
+  {
+    display: flex;
+    flex-grow: 1;
+    width: fit-content;
+    padding: 3rem;
+    margin: 1rem;
+  }
+
+  td
+  {
+    width: 65px;
+    height: 65px;
+    border-radius: 65px;
+  }
+
+  .linkButton
+  {
+    display: flex;
+    flex-shrink: 1;
+    padding: 2 2rem;
+    margin-right: 2rem;
+    height: 65px;
   }
 }

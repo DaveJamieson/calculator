@@ -109,7 +109,7 @@ negative.addEventListener( 'click', () =>
 
 } )
 
-negative.addEventListener( 'click', () =>
+percent.addEventListener( 'click', () =>
 {
   result.innerHTML = "";
   if ( firstValue != "" )

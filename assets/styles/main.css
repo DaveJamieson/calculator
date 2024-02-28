@@ -61,12 +61,12 @@ td
   cursor: pointer;
 }
 
-td :hover,
-tr :hover
+.button:hover,
+.greyButton:hover
 {
   background-color: var(--background);
   color: var(--secondary);
-  transition-duration: 0.35s;
+  transition-duration: 0.55s;
 }
 
 .greyButton
@@ -78,6 +78,13 @@ tr :hover
 .orangeButton
 {
   background-color: var(--tertiary);
+}
+
+.orangeButton:hover
+{
+  background-color: var(--secondary);
+  color: var(--tertiary);
+  transition-duration: 0.55s;
 }
 
 .zeroButton

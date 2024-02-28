@@ -7,42 +7,43 @@
   <title>Calculator</title>
   <link rel="stylesheet" href="./assets/styles/main.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="./main.js"></script>
 </head>
 
 <body>
   <div class="calculator">
     <table class="table">
       <tr>
-        <td class="screen" colspan="4">1,985</td>
+        <td id="screen" class="screen" colspan="4" type="text"></td>
       </tr>
       <tr>
-        <td class="greyButton">C</td>
+        <td class="greyButton" onclick="clearScreen()">C</td>
         <td class="greyButton">+/-</td>
         <td class="greyButton">%</td>
-        <td class="orangeButton bold">&div;</td>
+        <td class="orangeButton bold" onclick="handleOperators()" value="&div;">&div;</td>
       </tr>
       <tr>
-        <td class="button">7</td>
-        <td class="button">8</td>
-        <td class="button">9</td>
-        <td class="orangeButton bold">&times;</td>
+        <td class="button" onclick="handleNumbers(7)" value="7">7</td>
+        <td class="button" onclick="handleNumbers(8)" value="8">8</td>
+        <td class="button" onclick="handleNumbers(9)" value="9">9</td>
+        <td class="orangeButton bold" onclick="handleOperators()" value="&times;">&times;</td>
       </tr>
       <tr>
-        <td class="button">4</td>
-        <td class="button">5</td>
-        <td class="button">6</td>
-        <td class="orangeButton">-</td>
+        <td class="button" onclick="handleNumbers(4)" value="4">4</td>
+        <td class="button" onclick="handleNumbers(5)" value="5">5</td>
+        <td class="button" onclick="handleNumbers(6)" value="6">6</td>
+        <td class="orangeButton" onclick="handleOperators()" value="-">-</td>
       </tr>
       <tr>
-        <td class="button">1</td>
-        <td class="button">2</td>
-        <td class="button">3</td>
-        <td class="orangeButton">+</td>
+        <td class="button" onclick="handleNumbers(1)" value="1">1</td>
+        <td class="button" onclick="handleNumbers(2)" value="2">2</td>
+        <td class="button" onclick="handleNumbers(3)" value="3">3</td>
+        <td class="orangeButton" onclick="handleOperators()" value="+">+</td>
       </tr>
       <tr>
         <td class="zeroButton" colspan="2">0</td>
         <td class="button">.</td>
-        <td class="orangeButton">=</td>
+        <td class="orangeButton" onclick="handleCalculation()">=</td>
       </tr>
     </table>
   </div>

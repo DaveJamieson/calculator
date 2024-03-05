@@ -1,24 +1,35 @@
-let firstNumber
-let secondNumber
-let operator
+let firstNumber = ""
+let secondNumber = ""
+let operator = ""
 
 function handleNumbers( numberValue )
 {
   document.getElementById( "screen" ).innerHTML += numberValue
 }
 
-function handleOperators( pressedOperator )
+function handleOperators( operator )
 {
-  if ( pressedOperator === "+" )
-  {
-
-  }
-
+  document.getElementById( "screen" ).innerHTML += operator
 }
 
-function handleCalculation()
+function add( firstNumber, secondNumber )
 {
+  return firstNumber + secondNumber
+}
 
+function subtract()
+{
+  return firstNumber - secondNumber
+}
+
+function multiply()
+{
+  return firstNumber * secondNumber
+}
+
+function divide()
+{
+  return firstNumber / secondNumber
 }
 
 function clearScreen()
@@ -27,4 +38,21 @@ function clearScreen()
 }
 
 
+function handleCalculation( operator )
+{
+  if ( operator == "+" )
+  {
+    add()
+  } else if ( operator == "-" )
+  {
+    subtract()
+  } else if ( operator == "&times;" )
+  {
+    multiply()
+  } else if ( operator == "&div;" )
+  {
+    divide()
+  }
+}
 
+console.log( firstNumber )

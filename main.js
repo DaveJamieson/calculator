@@ -4,12 +4,21 @@ let operator = ""
 
 function handleNumbers( numberValue )
 {
-  document.getElementById( "screen" ).innerHTML += numberValue
+  firstNumber = document.getElementById( "screen" ).innerHTML += numberValue
+  if ( operator === "" )
+  {
+    firstNumber = document.getElementById( "screen" ).innerHTML
+  } else
+  {
+    secondNumber = document.getElementById( "screen" ).innerHTML
+  }
 }
 
-function handleOperators( operator )
+function handleOperators( clickedOperator )
 {
-  document.getElementById( "screen" ).innerHTML += operator
+  document.getElementById( "screen" ).innerHTML += clickedOperator
+
+  operator = clickedOperator
 }
 
 function add( firstNumber, secondNumber )
@@ -46,13 +55,11 @@ function handleCalculation( operator )
   } else if ( operator == "-" )
   {
     subtract()
-  } else if ( operator == "&times;" )
+  } else if ( operator == "*" )
   {
     multiply()
-  } else if ( operator == "&div;" )
+  } else if ( operator == "/" )
   {
     divide()
   }
 }
-
-console.log( firstNumber )

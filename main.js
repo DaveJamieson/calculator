@@ -1,21 +1,32 @@
-let firstNumber = ""
-let secondNumber = ""
-let operator = ""
+let firstNumber
+let secondNumber
+let operator
+let result
 
 function handleNumbers( numberValue )
 {
   firstNumber = document.getElementById( "screen" ).innerHTML += numberValue
-  if ( operator === "" )
-  {
-    firstNumber = document.getElementById( "screen" ).innerHTML
-  } else
+  if ( operator !== "" )
   {
     secondNumber = document.getElementById( "screen" ).innerHTML
+  } else 
+  {
+    firstNumber = document.getElementById( "screen" ).innerHTML
   }
+  console.log( typeof numberValue )
+  console.log( "firstNumber is " + firstNumber )
+  console.log( "secondNumber is " + secondNumber )
+
+
+  console.log( "this is type of first number" + typeof firstNumber )
+  console.log( "this is type of second number" + typeof secondNumber )
 }
 
 function handleOperators( clickedOperator )
 {
+  console.log( "this is operator" + operator )
+  console.log( "this is type of operator" + typeof operator )
+
   document.getElementById( "screen" ).innerHTML += clickedOperator
 
   operator = clickedOperator
@@ -47,19 +58,24 @@ function clearScreen()
 }
 
 
-function handleCalculation( operator )
+function handleCalculation( firstNumber, secondNumber )
 {
+
+
+  document.getElementById( "screen" ).innerHTML = ""
+
   if ( operator == "+" )
   {
-    add()
+    result = firstNumber + secondNumber
   } else if ( operator == "-" )
   {
-    subtract()
+    result = firstNumber - secondNumber
   } else if ( operator == "*" )
   {
-    multiply()
+    result = firstNumber * secondNumber
   } else if ( operator == "/" )
   {
-    divide()
+    result = firstNumber / secondNumber
   }
+  console.log( "this should be result" + result )
 }

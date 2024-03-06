@@ -20,6 +20,7 @@ function handleOperatorInput( clickedOperator )
 {
   if ( clickedOperator === '+' || clickedOperator === '-' || clickedOperator === '*' || clickedOperator === '/' )
   {
+    handleCalculation();
     operator = clickedOperator;
     updateScreen( clickedOperator );
   }
@@ -58,6 +59,34 @@ function clearScreen()
   firstNumber = '';
   secondNumber = '';
   operator = '';
+  updateScreen();
+}
+
+function toggleSign()
+{
+  if ( operator !== '' )
+  {
+    // If an operator is selected, toggle the sign of the second number
+    if ( secondNumber !== '' )
+    {
+      secondNumber = parseFloat( secondNumber ) * -1;
+    } else
+    {
+      // Display '-' if no second number has been entered yet
+      secondNumber = '-';
+    }
+  } else
+  {
+    // If no operator is selected, toggle the sign of the first number
+    if ( firstNumber !== '' )
+    {
+      firstNumber = parseFloat( firstNumber ) * -1;
+    } else
+    {
+      // Display '-' if no first number has been entered yet
+      firstNumber = '-';
+    }
+  }
   updateScreen();
 }
 

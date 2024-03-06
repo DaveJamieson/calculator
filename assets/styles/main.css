@@ -25,7 +25,8 @@ body
   align-items: center;
   flex-wrap: wrap;
   width: 95%;
-  height: fit-content;
+  height: 75%;
+  min-height: 75vh;
   background-color: var(--primary);
   color: var(--secondary);
   margin: auto auto;

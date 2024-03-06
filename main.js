@@ -1,81 +1,95 @@
-let firstNumber
-let secondNumber
-let operator
-let result
+let firstNumber = '';
+let secondNumber = '';
+let operator = '';
+let result;
 
-function handleNumbers( numberValue )
+function handleNumberInput( numberValue )
 {
-  firstNumber = document.getElementById( "screen" ).innerHTML += numberValue
-  if ( operator !== "" )
+  if ( operator !== '' )
   {
-    secondNumber = document.getElementById( "screen" ).innerHTML
-  } else 
+    secondNumber += numberValue;
+  } else
   {
-    firstNumber = document.getElementById( "screen" ).innerHTML
+    firstNumber += numberValue;
   }
-  console.log( typeof numberValue )
-  console.log( "firstNumber is " + firstNumber )
-  console.log( "secondNumber is " + secondNumber )
 
-
-  console.log( "this is type of first number" + typeof firstNumber )
-  console.log( "this is type of second number" + typeof secondNumber )
+  updateScreen();
 }
 
-function handleOperators( clickedOperator )
+function handleOperatorInput( clickedOperator )
 {
-  console.log( "this is operator" + operator )
-  console.log( "this is type of operator" + typeof operator )
-
-  document.getElementById( "screen" ).innerHTML += clickedOperator
-
-  operator = clickedOperator
+  if ( clickedOperator === '+' || clickedOperator === '-' || clickedOperator === '*' || clickedOperator === '/' )
+  {
+    operator = clickedOperator;
+    updateScreen( clickedOperator );
+  }
 }
 
-function add( firstNumber, secondNumber )
+function updateScreen( content = '' )
 {
-  return firstNumber + secondNumber
+  let displayedContent = content !== '' ? content : firstNumber + operator + secondNumber;
+  displayedContent = displayedContent.replace( /\*/g, '&times;' ).replace( /\//g, '&div;' );
+
+  document.getElementById( 'screen' ).innerHTML = displayedContent;
 }
 
-function subtract()
+function add( firstNum, secondNum )
 {
-  return firstNumber - secondNumber
+  return parseFloat( firstNum ) + parseFloat( secondNum );
 }
 
-function multiply()
+function subtract( firstNum, secondNum )
 {
-  return firstNumber * secondNumber
+  return parseFloat( firstNum ) - parseFloat( secondNum );
 }
 
-function divide()
+function multiply( firstNum, secondNum )
 {
-  return firstNumber / secondNumber
+  return parseFloat( firstNum ) * parseFloat( secondNum );
+}
+
+function divide( firstNum, secondNum )
+{
+  return parseFloat( firstNum ) / parseFloat( secondNum );
 }
 
 function clearScreen()
 {
-  document.getElementById( "screen" ).innerHTML = ""
+  firstNumber = '';
+  secondNumber = '';
+  operator = '';
+  updateScreen();
 }
 
-
-function handleCalculation( firstNumber, secondNumber )
+function handleCalculation()
 {
+  result = '';
 
+  if ( operator !== '' && secondNumber !== '' )
+  {
+    if ( operator === '+' )
+    {
+      result = add( firstNumber, secondNumber );
+    } else if ( operator === '-' )
+    {
+      result = subtract( firstNumber, secondNumber );
+    } else if ( operator === '*' )
+    {
+      result = multiply( firstNumber, secondNumber );
+    } else if ( operator === '/' )
+    {
+      if ( parseFloat( secondNumber ) === 0 )
+      {
+        result = 'Error: cannot divide by zero';
+      } else
+      {
+        result = divide( firstNumber, secondNumber );
+      }
+    }
 
-  document.getElementById( "screen" ).innerHTML = ""
-
-  if ( operator == "+" )
-  {
-    result = firstNumber + secondNumber
-  } else if ( operator == "-" )
-  {
-    result = firstNumber - secondNumber
-  } else if ( operator == "*" )
-  {
-    result = firstNumber * secondNumber
-  } else if ( operator == "/" )
-  {
-    result = firstNumber / secondNumber
+    document.getElementById( 'screen' ).innerHTML = result;
+    firstNumber = result.toString();
+    secondNumber = '';
+    operator = '';
   }
-  console.log( "this should be result" + result )
 }

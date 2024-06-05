@@ -13,7 +13,7 @@ function handleNumberInput( numberValue )
     firstNumber += numberValue;
   }
 
-  updateScreen();
+  updateScreen()
 }
 
 function handleOperatorInput( clickedOperator )
@@ -64,30 +64,39 @@ function clearScreen()
 
 function toggleSign()
 {
-  if ( operator !== '' )
+  if ( document.getElementById( "screen" ).innerHTML == "" )
   {
-    // If an operator is selected, toggle the sign of the second number
-    if ( secondNumber !== '' )
-    {
-      secondNumber = parseFloat( secondNumber ) * -1;
-    } else
-    {
-      // Display '-' if no second number has been entered yet
-      secondNumber = '-';
-    }
+    // If nothing is displayed add negative symbol
+    firstNumber = "-0";
   } else
   {
-    // If no operator is selected, toggle the sign of the first number
-    if ( firstNumber !== '' )
+    if ( operator !== "" )
     {
-      firstNumber = parseFloat( firstNumber ) * -1;
+      // If operator is present do conversion to second number
+      if ( secondNumber > 0 )
+      {
+        // If number is positive convert to negative
+        secondNumber = 0 - secondNumber
+      } else
+      {
+        // If number is negative convert to positive
+        secondNumber = Math.abs( secondNumber )
+      }
     } else
     {
-      // Display '-' if no first number has been entered yet
-      firstNumber = '-';
+      if ( firstNumber > 0 )
+      {
+        // If number is positive convert to negative
+        firstNumber = 0 - firstNumber
+      } else
+      {
+        // If number is negative convert to positive
+        firstNumber = Math.abs( firstNumber )
+      }
     }
+
+    document.getElementById( "screen" ).innerHTML = firstNumber;
   }
-  updateScreen();
 }
 
 function handleCalculation()

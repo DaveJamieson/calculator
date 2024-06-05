@@ -70,7 +70,6 @@ calculator-main/
   - **styles/**: CSS files for styling the application.
 - **index.html**: The main HTML file for the application.
 - **main.js**: The JavaScript file containing the logic for the calculator.
-- **.DS_Store**: System files (can be ignored).
 
 ## Contributing
 

@@ -2,6 +2,8 @@
 
 A simple calculator application built with vanilla JavaScript, HTML, and CSS. This project allows users to perform basic arithmetic operations such as addition, subtraction, multiplication, and division. 
 
+<a href='https://davejamieson.github.io/calculator/'>Try It Out Here!!</a>
+
 <img src='./assets/img/Calculator.png' alt='Calculator'>
 
 ## Features
